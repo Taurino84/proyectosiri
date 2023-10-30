@@ -16,9 +16,11 @@ class UbicacionControlle extends Controller
     {
         $texto = trim($request->input('texto'));
         $ubicaciones = DB::table('ubicaciones')
-        ->select('idUbicacion','nombre','descripcion')
+        ->select('idUbicacion','nombre','direccion','estado')
         ->where('nombre','LIKE','%'.$texto.'%')
+        ->orWhere('estado','LIKE','%'.$texto.'%')
         ->orderBy('nombre')
+        ->orderBy('estado')
         ->paginate(10);
         return view('ubicacion.index',compact('ubicaciones','texto'));
     }
@@ -38,7 +40,8 @@ class UbicacionControlle extends Controller
     {
         $ubicaciones = new Ubicacion;
         $ubicaciones->nombre = $request->input('nombre');
-        $ubicaciones->descripcion = $request->input('descripcion');
+        $ubicaciones->direccion = $request->input('direccion');
+        $ubicaciones->estado = $request->input('estado');
         $ubicaciones->save();
         return redirect()->route('ubicacion.index');
     }
@@ -68,7 +71,8 @@ class UbicacionControlle extends Controller
     {
         $ubicaciones = Ubicacion::findOrFail($id);
         $ubicaciones->nombre = $request->input('nombre');
-        $ubicaciones->descripcion = $request->input('descripcion');
+        $ubicaciones->direccion = $request->input('direccion');
+        $ubicaciones->estado = $request->input('estado');
         $ubicaciones->save();
         return redirect()->route('ubicacion.index');
     }

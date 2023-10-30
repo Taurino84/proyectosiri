@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Edición de  Ubicaciones') }}
+            {{ __('Nuevo Departamento') }}
         </h2>
     </x-slot>
     <div class="py-12">
@@ -10,16 +10,15 @@
                 <div class="container mt-2">                    
                     <div class="row">
                         <div class="col-xl-12">
-                            <form action="{{route('ubicacion.update',$ubicaciones->idUbicacion)}}" method="POST">
+                            <form action="{{route('departamento.store')}}" method="POST">
                                 @csrf
-                                @method('PUT')
                                 <div class="form-group ">
                                     <label for="nombre">Nombre</label>
-                                    <input type="text" name="nombre" value="{{$ubicaciones->nombre}}" class="form-control"   required >
+                                    <input type="text" name="nombre"  class="form-control" maxlength="20" required>
                                 </div>
                                 <div class="form group">
-                                    <label for="direccion">Direccion</label>
-                                    <input type="text" name="direccion" value="{{$ubicaciones->direccion}}"  class="form-control" required>
+                                    <label for="descripcion">Descripción</label>
+                                    <input type="text" name="descripcion" maxlength="255" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="estado">Estado</label>
@@ -41,4 +40,3 @@
         </div>
     </div>
 </x-app-layout>
-

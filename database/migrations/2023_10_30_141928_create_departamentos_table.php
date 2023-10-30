@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ubicaciones', function (Blueprint $table) {
-            $table->id('idUbicacion');
+        Schema::create('departamentos', function (Blueprint $table) {
+            $table->id('idDepartamento');
             $table->string('nombre',30);
-            $table->string('descripcion',100);
+            $table->longText('descripcion',255);
+            $table->enum('estado',['Activo','Inactivo'])->default('Activo');
             
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ubicaciones');
+        Schema::dropIfExists('departamentos');
     }
 };

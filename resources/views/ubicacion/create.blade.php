@@ -17,8 +17,15 @@
                                     <input type="text" name="nombre"  class="form-control" maxlength="20" required>
                                 </div>
                                 <div class="form group">
-                                    <label for="descripcion">Descripción</label>
-                                    <input type="text" name="descripcion" maxlength="100" class="form-control" required>
+                                    <label for="direccion">Direccion</label>
+                                    <input type="text" name="direccion" maxlength="100" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="estado">Estado</label>
+                                    <select name="estado" id="" class="form-control" required>
+                                        <option value="Activo">Activo</option>
+                                        <option value="Inactivo">Inactivo</option>
+                                    </select>
                                 </div>
                                 <div class="form-group my-2">
                                     <input type="submit" value="Guardar" class="btn btn-primary mr-2">
