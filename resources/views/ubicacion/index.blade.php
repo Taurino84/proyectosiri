@@ -10,7 +10,7 @@
                 <form action="{{route('ubicacion.index')}}" method="GET">
                     <div class="row my-1 mt-2">
                         <div class="col-sm-4">
-                            <input type="text" name="texto" class="form-control" value="{{$texto}}">
+                            <input type="text" name="texto" class="form-control" value="{{$texto}}" placeholder="Ingrese la Ubicación">
                         </div>
                         <div class="col-auto">
                             <input type="submit" value="Buscar" class="btn btn-primary">
@@ -24,7 +24,7 @@
             <div class="col-xl-12">
                 <div class="table-responsive">
                     <table class="table table-striped">
-                        <thead>
+                        <thead class="table-dark">
                             <tr>
                                 <th>Opciones</th>
                                 <th>ID</th>
@@ -45,7 +45,7 @@
                             <tr>
                                 <td><a href="{{route('ubicacion.edit',$ubicacion->idUbicacion)}}" class="btn btn-warning btn-sm">Editar</a> 
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modal-delete-{{$ubicacion->idUbicacion}}">
+                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modal-delete-{{$ubicacion->idUbicacion}}">
                                         Eliminar
                                     </button>
                                 </td>

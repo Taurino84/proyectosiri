@@ -1,0 +1,37 @@
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Nuevo Cargo') }}
+        </h2>
+    </x-slot>
+
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <form action="{{route('cargo.store')}}" method="POST">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="nombre">Nombre</label>
+                                    <input type="text" name="nombre" class="form-control" maxlength="20" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="descripcion">Descripcion</label>
+                                    <input type="text" name="descripcion"  maxlength="255" class="form-control" required>
+                                </div>
+                                <div class="form group my-2">
+                                    <input type="submit" value="Guardar" class="btn btn-primary mr-1">
+                                    <input type="reset" value="Cancelar" class="btn btn-light mr-1">
+                                    <button type="submit" onclick="javascript:history.back()" class="btn btn-dark ">Listado</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</x-app-layout>

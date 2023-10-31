@@ -24,7 +24,7 @@
             <div class="col-xl-12">
                 <div class="table-responsive">
                     <table class="table table-striped">
-                        <thead>
+                        <thead class="table-dark">
                             <tr>
                                 <th>Opciones</th>
                                 <th>ID</th>
